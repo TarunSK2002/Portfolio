@@ -1,0 +1,25 @@
+name: Deploy Portfolio
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Executing remote ssh commands using password
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        password: ${{ secrets.SSH_PASSWORD }}
+        port: 22
+        script: |
+          cd /var/www/f6810204-9b35-4d33-9ea4-e6a9ac482b72/tarun.tideorca.com
+          git fetch origin
+          git reset --hard origin/master

@@ -21,10 +21,11 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            cd /home/tideorca1/public_html
+            cd ~/tarun.tideorca.com
 
             if [ ! -d ".git" ]; then
-              git clone https://github.com/TarunSK2002/portfolio.git .
+            git init
+              git remote add origin https://github.com/TarunSK2002/portfolio.git .
             fi
 
             git fetch origin

@@ -3,7 +3,7 @@ name: Deploy Portfolio
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
@@ -24,9 +24,8 @@ jobs:
             cd /home/tideorca1/public_html
 
             if [ ! -d ".git" ]; then
-              git clone https://github.com/TarunSK2002/Portfolio.git .
+              git clone https://github.com/TarunSK2002/portfolio.git .
             fi
 
             git fetch origin
-            git reset --hard origin/master
-
+            git reset --hard origin/main

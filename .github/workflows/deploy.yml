@@ -1,0 +1,33 @@
+```yaml id="jlwm6p"
+name: Deploy Portfolio
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to MilesWeb
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd /home/tideorca1/public_html
+
+            if [ ! -d ".git" ]; then
+              git clone https://github.com/TarunSK2002/Portfolio.git .
+            fi
+
+            git fetch origin
+            git reset --hard origin/master
+```

@@ -1,0 +1,110 @@
+    // ==========================================
+    // INTERNSHIP / JOB APPLICATION FORM METHODS
+    // ADD THESE TO YOUR class DB { ... }
+    // ==========================================
+
+    function job_application_form_submit($_DATA, $_upload)
+    {
+        try {
+            // Create uploads directory if it doesn't exist
+            $target_dir = "uploads/";
+            if (!is_dir($target_dir)) {
+                mkdir($target_dir, 0755, true);
+            }
+
+            $photo_path = "";
+            $resume_path = "";
+            
+            // Re-using your upload logic or a specialized one for these files
+            if(isset($_upload['photo']) && $_upload['photo']['error'] == 0) {
+                $fileName = basename($_upload["photo"]["name"]);
+                $uniqueFileName = time() . "_" . uniqid() . "_" . preg_replace("/[^a-zA-Z0-9.-]/", "_", $fileName);
+                $targetFilePath = $target_dir . $uniqueFileName;
+                if(move_uploaded_file($_upload["photo"]["tmp_name"], $targetFilePath)) {
+                    $photo_path = $targetFilePath;
+                }
+            }
+
+            if(isset($_upload['resume']) && $_upload['resume']['error'] == 0) {
+                $fileName = basename($_upload["resume"]["name"]);
+                $uniqueFileName = time() . "_" . uniqid() . "_" . preg_replace("/[^a-zA-Z0-9.-]/", "_", $fileName);
+                $targetFilePath = $target_dir . $uniqueFileName;
+                if(move_uploaded_file($_upload["resume"]["tmp_name"], $targetFilePath)) {
+                    $resume_path = $targetFilePath;
+                }
+            }
+
+            // Sanitize inputs
+            $email = $this->connection->real_escape_string($_DATA['email'] ?? '');
+            $full_name = $this->connection->real_escape_string($_DATA['fullName'] ?? '');
+            $dob = $this->connection->real_escape_string($_DATA['dob'] ?? '');
+            $gender = $this->connection->real_escape_string($_DATA['gender'] ?? '');
+            $marital_status = $this->connection->real_escape_string($_DATA['maritalStatus'] ?? '');
+            $mobile = $this->connection->real_escape_string($_DATA['mobile'] ?? '');
+            $year_of_passing = $this->connection->real_escape_string($_DATA['yearOfPassing'] ?? '');
+            
+            $degree = $this->connection->real_escape_string($_DATA['degree'] ?? '');
+            if ($degree === 'Other' && !empty($_DATA['degreeOther'])) {
+                $degree = "Other: " . $this->connection->real_escape_string($_DATA['degreeOther']);
+            }
+
+            $department = $this->connection->real_escape_string($_DATA['department'] ?? '');
+            if ($department === 'Other' && !empty($_DATA['departmentOther'])) {
+                $department = "Other: " . $this->connection->real_escape_string($_DATA['departmentOther']);
+            }
+
+            $institution = $this->connection->real_escape_string($_DATA['institution'] ?? '');
+            $degree_cgpa = $this->connection->real_escape_string($_DATA['degreeCgpa'] ?? '');
+            $arrears = $this->connection->real_escape_string($_DATA['arrears'] ?? '');
+            $diploma_cgpa = $this->connection->real_escape_string($_DATA['diplomaCgpa'] ?? '');
+            $twelfth_cgpa = $this->connection->real_escape_string($_DATA['twelfthCgpa'] ?? '');
+            $tenth_cgpa = $this->connection->real_escape_string($_DATA['tenthCgpa'] ?? '');
+            $native_state = $this->connection->real_escape_string($_DATA['nativeState'] ?? '');
+            $native_district = $this->connection->real_escape_string($_DATA['nativeDistrict'] ?? '');
+            $current_address = $this->connection->real_escape_string($_DATA['currentAddress'] ?? '');
+            $permanent_address = $this->connection->real_escape_string($_DATA['permanentAddress'] ?? '');
+            $nationality = $this->connection->real_escape_string($_DATA['nationality'] ?? '');
+            $skills_comments = $this->connection->real_escape_string($_DATA['skillsComments'] ?? '');
+            $referral = $this->connection->real_escape_string($_DATA['referral'] ?? '');
+
+            $role = $this->connection->real_escape_string($_DATA['role'] ?? '');
+            if ($role === 'Other' && !empty($_DATA['roleOther'])) {
+                $role = "Other: " . $this->connection->real_escape_string($_DATA['roleOther']);
+            }
+
+            $category = $this->connection->real_escape_string($_DATA['category'] ?? '');
+
+            // Checking for duplicates (optional)
+            $checking = "SELECT * FROM mi_internship_application WHERE email = '$email'";
+            $existing_result = $this->connection->query($checking);
+            if ($existing_result && $existing_result->num_rows > 0) {
+                return "An application with this email already exists.";
+            }
+
+            // Insert
+            $inserting = "INSERT INTO mi_internship_application (email, full_name, photo_path, resume_path, dob, gender, marital_status, mobile, year_of_passing, degree, department, institution, degree_cgpa, arrears, diploma_cgpa, twelfth_cgpa, tenth_cgpa, native_state, native_district, current_address, permanent_address, nationality, skills_comments, referral, role, category) 
+                          VALUES ('$email', '$full_name', '$photo_path', '$resume_path', '$dob', '$gender', '$marital_status', '$mobile', '$year_of_passing', '$degree', '$department', '$institution', '$degree_cgpa', '$arrears', '$diploma_cgpa', '$twelfth_cgpa', '$tenth_cgpa', '$native_state', '$native_district', '$current_address', '$permanent_address', '$nationality', '$skills_comments', '$referral', '$role', '$category')";
+
+            if($this->connection->query($inserting)) {
+                return 'success';
+            } else {
+                return "Database Error: " . $this->connection->error;
+            }
+
+        } catch (\Throwable $th) {
+            return "Error: " . $th->getMessage();
+        }
+    }
+
+    function read_internship_applications()
+    {
+        try {
+            $query = 'select * from mi_internship_application ORDER BY id DESC';
+            $result = $this->connection->query($query);
+            $data = $result->fetch_all(MYSQLI_ASSOC);
+            return $data;
+        } catch (\Throwable $th) {
+            echo $th;
+            return [];
+        }
+    }

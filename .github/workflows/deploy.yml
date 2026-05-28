@@ -25,7 +25,7 @@ jobs:
 
             if [ ! -d ".git" ]; then
             git init
-              git remote add origin https://github.com/TarunSK2002/portfolio.git .
+              git remote add origin https://github.com/TarunSK2002/portfolio.git 
             fi
 
             git fetch origin

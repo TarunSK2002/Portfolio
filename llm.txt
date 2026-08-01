@@ -1,0 +1,51 @@
+# tarun.tideorca.com
+
+> Tarun SK is a MERN Stack Developer based in Karur, Tamil Nadu, India. Explore his portfolio of scalable, real-world solutions from E-Commerce systems to IoT automation using React, Node.js, MongoDB, and MySQL.
+
+## Home
+
+- [MERN Developer Tarun SK](https://tarun.tideorca.com/): Full Stack MERN Developer in Tamil Nadu, India.
+
+## Freelance Software Services
+
+- [Custom Software Development & Case Studies](https://tarun.tideorca.com/software-services.html): Freelance service landing page. Features detailed project case studies for enterprise systems (E-Commerce, Gym ERP, HRMS, Chit Fund Ledger, IoT Automation), list of services, development workflow process, and contact options for custom software projects.
+
+## Outreach Playbook & Toolkit
+
+- [Interactive Guest Post Submission Strategy (2026)](https://tarun.tideorca.com/guest-posting-strategy.html): Interactive dashboard for guest posting. Features a Domain Vetting Calculator, dynamic Email Pitch Writer, progress Checklist, and searchable database of 1,881 SEO target sites.
+
+## Contact & Profiles
+
+- [GitHub Profile](https://github.com/TarunSK2002): Repository source code, active contributions, and full-stack implementations.
+- [LinkedIn Profile](https://linkedin.com/in/tarun-sk): Professional networking, client feedback, and career history.
+- [Email Address](mailto:murugatarun9787@gmail.com): Direct contact for freelance contracts and project inquiries (murugatarun9787@gmail.com).
+- [Phone / WhatsApp Contact](tel:+919363501944): International contact number (+91 9363501944).
+- [Resume / CV](https://tarun.tideorca.com/Tarun%20SK%20Resume%20(1).pdf): PDF resume detailing academics, skillset, and professional experience.
+- [Twitter / X](https://x.com/TarunSK02): Industry updates and tech discussion.
+- [LeetCode Profile](https://leetcode.com/u/TarunSK2002/): Coding stats and algorithmic challenges.
+- [HackerRank Profile](https://www.hackerrank.com/profile/murugatarun9787): Coding certifications and skill assessments.
+
+## Technical Skills
+
+- **Frontend**: HTML5, CSS3, JavaScript (ES6+), React.js, Bootstrap
+- **Backend**: Node.js, Express.js, RESTful APIs, Auth & Middleware
+- **Databases**: MongoDB, Mongoose ODM, MySQL, MS SQL Server
+- **IoT & Hardware**: Arduino microcontrollers, sensor integration, automated controls
+- **Tools**: Git, GitHub, VS Code, Netlify, Figma
+- **Engineering Concepts**: System Design, Problem Solving, Client Handling, Requirement Analysis, UI/UX Thinking
+
+## Featured Projects
+
+- **Sri Mobiles E-Commerce System**: A full-featured mobile retail platform featuring unified Admin and Customer roles. Includes secure role-based login, product/dealer/purchase inventories, live stock level tracking with automatic warning thresholds, intuitive cart and direct checkout pipelines, live order status tracking, and a comprehensive business analytics dashboard generating sales, purchase, and profit margins. Built using React, Node.js, and MySQL.
+- **Gym & Training Management System**: Enterprise management software designed for gym chains. Incorporates trainer & candidate modules, BranchMasterUI, attendance logs, subscription payment tracking, and analytics dashboards with deep relational database dependencies. Built using React, Node.js, and MySQL.
+- **Human Resource Management System (HRMS)**: Enterprise software streamlining human resource workflows. Features comprehensive employee records, daily attendance tracking, automated leave requests, structural salary and payroll calculations, and an HR insights dashboard. Built using React, Node.js, and MySQL.
+- **Smart Home Automation System (IoT)**: Software-hardware integration for smart environments. Offers automated lighting and appliance controls using Arduino microcontrollers and real-time sensors, accessible via a web-based responsive dashboard.
+- **Smart Supermarket Billing System**: Automated retail solution utilizing sensors and QR codes to streamline checkout lines, calculate pricing dynamically, and prevent theft.
+- **Chit Fund Management System**: Architectural blueprints and relational database schema design implementing complex financial business rules and user ledger tracking for chit fund organizations.
+- **Tide Orca & Static Web Projects**: Custom SEO-friendly landing pages and consulting websites designed with web security practices, responsive CSS grids, and Netlify deployment.
+
+## Core Architectural Specialties
+
+- **Role-Based Authentication (RBAC)**: Custom JWT verification middlewares, unified database login architecture, and role-based route guards.
+- **E-Commerce Checkout Workflows**: Transactional integrity, state management for carts, checkout flows, and database structures handling order/order-item relations.
+- **Database Engineering**: Highly normalized MySQL schemas, performance indexing, relational modeling, and document-based MongoDB storage patterns.

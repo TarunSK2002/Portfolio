@@ -2,8 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
       <loc>https://tarun.tideorca.com/</loc>
-      <lastmod>2026-05-28</lastmod>
+      <lastmod>2026-08-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
+   </url>
+   <url>
+      <loc>https://tarun.tideorca.com/mern-stack-developer.html</loc>
+      <lastmod>2026-08-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.95</priority>
+   </url>
+   <url>
+      <loc>https://tarun.tideorca.com/full-stack-web-developer.html</loc>
+      <lastmod>2026-08-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.95</priority>
+   </url>
+   <url>
+      <loc>https://tarun.tideorca.com/software-services.html</loc>
+      <lastmod>2026-08-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://tarun.tideorca.com/guest-posting-strategy.html</loc>
+      <lastmod>2026-08-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
    </url>
 </urlset>
